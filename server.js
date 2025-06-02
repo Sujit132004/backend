@@ -14,6 +14,9 @@ app.use(express.json());
 app.use('/api/auth',authRoute);
 app.use('/api/stations',stationRoute);
 const PORT=process.env.PORT ||5000;
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend!');
+});
 
 app.listen(PORT,()=>{
     console.log(`Server started at PORT no: ${PORT}`);
